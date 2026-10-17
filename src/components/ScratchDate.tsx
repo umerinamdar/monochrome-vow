@@ -34,7 +34,7 @@ export function ScratchDate({ children }: { children: React.ReactNode }) {
 
     let down = false;
     let moves = 0;
-    const pos = (e: PointerEvent) => { const b = c.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; };
+    const pos = (e: PointerEvent): [number, number] => { const b = c.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; };
     const scratch = (e: PointerEvent) => {
       if (!down) return;
       const [x, y] = pos(e);
